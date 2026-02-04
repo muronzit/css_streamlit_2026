@@ -3,12 +3,12 @@ import pandas as pd
 import numpy as np
 
 # Title of the app
-st.title("Researcher Profile Page with STEM Data")
+st.title("Researcher Profile Page")
 
 # Collect basic information
-name = "Dr. Jane Doe"
-field = "Astrophysics"
-institution = "University of Science"
+name = "Dr. Tendai Muronzi"
+field = "Bioinformatics"
+institution = "Rhodes University, South Africa"
 
 # Display basic profile information
 st.header("Researcher Overview")
@@ -17,8 +17,9 @@ st.write(f"**Field of Research:** {field}")
 st.write(f"**Institution:** {institution}")
 
 st.image(
-    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    caption="Nature (Pixabay)"
+    "https://raw.githubusercontent.com/muronzit/css_streamlit_2026/main/pexels-myburgh-4816921.jpg",
+    caption="Photo by Myburgh (Pexels)",
+    use_column_width=True
 )
 
 # Add a section for publications
@@ -116,5 +117,6 @@ elif data_option == "Weather Data":
 
 # Add a contact section
 st.header("Contact Information")
-email = "jane.doe@example.com"
+email = "tendai.muronzi@ru.ac.za"
+
 st.write(f"You can reach {name} at {email}.")
