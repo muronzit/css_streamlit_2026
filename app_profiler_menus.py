@@ -5,11 +5,6 @@ import numpy as np
 # Set page title
 st.set_page_config(page_title="Researcher Profile and STEM data", layout="wide")
 
-st.markdown(
-    "<h2 style='text-align: center;'>Researcher Profile</h2>",
-    unsafe_allow_html=True
-)
-
 # Sidebar Menu
 st.sidebar.title("Navigation")
 menu = st.sidebar.radio(
@@ -30,12 +25,12 @@ astronomy_data = pd.DataFrame({
     "Observation Date": pd.date_range(start="2024-01-01", periods=5),
 })
 
-weather_data = pd.DataFrame({
-    "City": ["Cape Town", "London", "New York", "Tokyo", "Sydney"],
-    "Temperature (°C)": [25, 10, -3, 15, 30],
-    "Humidity (%)": [65, 70, 55, 80, 50],
-    "Recorded Date": pd.date_range(start="2024-01-01", periods=5),
-})
+# weather_data = pd.DataFrame({
+#     "City": ["Cape Town", "London", "New York", "Tokyo", "Sydney"],
+#     "Temperature (°C)": [25, 10, -3, 15, 30],
+#     "Humidity (%)": [65, 70, 55, 80, 50],
+#     "Recorded Date": pd.date_range(start="2024-01-01", periods=5),
+# })
 
 # Sections based on menu selection
 if menu == "Researcher Profile":
@@ -96,7 +91,7 @@ elif menu == "STEM Data Explorer":
     # Tabbed view for STEM data
     data_option = st.sidebar.selectbox(
         "Choose a dataset to explore", 
-        ["Physics Experiments", "Astronomy Observations", "Weather Data"]
+        ["Physics Experiments", "Astronomy Observations"]
     )
 
     if data_option == "Physics Experiments":
@@ -121,18 +116,18 @@ elif menu == "STEM Data Explorer":
         st.write(f"Filtered Results for Brightness Range {brightness_filter}:")
         st.dataframe(filtered_astronomy)
 
-    elif data_option == "Weather Data":
-        st.write("### Weather Data")
-        st.dataframe(weather_data)
-        # Add widgets to filter by temperature and humidity
-        temp_filter = st.slider("Filter by Temperature (°C)", -10.0, 40.0, (-10.0, 40.0))
-        humidity_filter = st.slider("Filter by Humidity (%)", 0, 100, (0, 100))
-        filtered_weather = weather_data[
-            weather_data["Temperature (°C)"].between(temp_filter[0], temp_filter[1]) &
-            weather_data["Humidity (%)"].between(humidity_filter[0], humidity_filter[1])
-        ]
-        st.write(f"Filtered Results for Temperature {temp_filter} and Humidity {humidity_filter}:")
-        st.dataframe(filtered_weather)
+    # elif data_option == "Weather Data":
+    #     st.write("### Weather Data")
+    #     st.dataframe(weather_data)
+    #     # Add widgets to filter by temperature and humidity
+    #     temp_filter = st.slider("Filter by Temperature (°C)", -10.0, 40.0, (-10.0, 40.0))
+    #     humidity_filter = st.slider("Filter by Humidity (%)", 0, 100, (0, 100))
+    #     filtered_weather = weather_data[
+    #         weather_data["Temperature (°C)"].between(temp_filter[0], temp_filter[1]) &
+    #         weather_data["Humidity (%)"].between(humidity_filter[0], humidity_filter[1])
+    #     ]
+    #     st.write(f"Filtered Results for Temperature {temp_filter} and Humidity {humidity_filter}:")
+    #     st.dataframe(filtered_weather)
         
         
 
@@ -142,6 +137,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
