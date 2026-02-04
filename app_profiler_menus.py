@@ -41,11 +41,13 @@ if menu == "Researcher Profile":
     name = "Dr. Tendai Muronzi"
     field = "Bioinformatics"
     institution = "Rhodes University, South Africa"
+    summary = "Rhodes University, South Africa" 
 
     # Display basic profile information
     st.write(f"**Name:** {name}")
     st.write(f"**Field of Research:** {field}")
     st.write(f"**Institution:** {institution}")
+    st.write(f"**Summary:** {summary}")
     
     st.image(
     "https://raw.githubusercontent.com/muronzit/css_streamlit_2026/main/pexels-myburgh-4816921.jpg",
@@ -135,6 +137,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
