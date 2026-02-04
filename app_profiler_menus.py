@@ -35,7 +35,7 @@ bsc_data = pd.DataFramep({
     "Years": ["2012 - 2016"],
     "Thesis": ["dsRNA analysis of sweet potato to index for unknown viruses"],    
     "Focus": ["Lab techniques, Tissue culture, Molecular biology and Chemistry"]
-
+})
 # weather_data = pd.DataFrame({
 #     "City": ["Cape Town", "London", "New York", "Tokyo", "Sydney"],
 #     "Temperature (°C)": [25, 10, -3, 15, 30],
@@ -163,6 +163,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
