@@ -108,39 +108,17 @@ elif menu == "Education":
 
     if data_option == "PhD in Bioinformatics":
         st.write("### Physics Experiment Data")
-        st.dataframe(physics_data)
+        st.dataframe(phd_data)
         # Add widget to filter by Energy levels
-        energy_filter = st.slider("Filter by Energy (MeV)", 0.0, 10.0, (0.0, 10.0))
-        filtered_physics = physics_data[
-            physics_data["Energy (MeV)"].between(energy_filter[0], energy_filter[1])
-        ]
-        st.write(f"Filtered Results for Energy Range {energy_filter}:")
-        st.dataframe(filtered_physics)
-
+ 
     elif data_option == "MSc in Bioinformatics":
         st.write("### Astronomy Observation Data")
-        st.dataframe(astronomy_data)
+        st.dataframe(msc_data)
         # Add widget to filter by Brightness
-        brightness_filter = st.slider("Filter by Brightness (Magnitude)", -15.0, 5.0, (-15.0, 5.0))
-        filtered_astronomy = astronomy_data[
-            astronomy_data["Brightness (Magnitude)"].between(brightness_filter[0], brightness_filter[1])
-        ]
-        st.write(f"Filtered Results for Brightness Range {brightness_filter}:")
-        st.dataframe(filtered_astronomy)
 
     elif data_option == "BSc in Biochemistry":
         st.write("### Molecular Dynamics Simulation Data")
-        rmsd_range = st.slider(
-        "Filter by RMSD (Å)",
-        float(md_data["RMSD (Å)"].min()),
-        float(md_data["RMSD (Å)"].max()),
-        (float(md_data["RMSD (Å)"].min()), float(md_data["RMSD (Å)"].max()))
-        )
-        filtered_md = md_data[
-        md_data["RMSD (Å)"].between(rmsd_range[0], rmsd_range[1])
-        ]
-        st.write(f"Frames with RMSD in range {rmsd_range}:")
-        st.dataframe(filtered_md)
+        st.dataframe(bsc_data)
 
     # elif data_option == "Weather Data":
     #     st.write("### Weather Data")
@@ -163,6 +141,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
