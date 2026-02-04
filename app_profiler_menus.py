@@ -13,28 +13,28 @@ menu = st.sidebar.radio(
 )
 
 # Dummy STEM data
-physics_data = pd.DataFrame({
-    "Experiment": ["Alpha Decay", "Beta Decay", "Gamma Ray Analysis", "Quark Study", "Higgs Boson"],
-    "Energy (MeV)": [4.2, 1.5, 2.9, 3.4, 7.1],
-    "Date": pd.date_range(start="2024-01-01", periods=5),
+phd_data = pd.DataFrame({
+    "Degree": ["PhD in Bioinformatics"],
+    "Institution": ["Rhodes University"],
+    "Years": ["2019 - 2023"],
+    "Thesis": ["Computational studies in human African trypanosomiasis"],
+    "Focus": ["Structural bioinformatics, protein-protein interactions, computational drug discovery"]   
 })
 
-astronomy_data = pd.DataFrame({
-    "Celestial Object": ["Mars", "Venus", "Jupiter", "Saturn", "Moon"],
-    "Brightness (Magnitude)": [-2.0, -4.6, -1.8, 0.2, -12.7],
-    "Observation Date": pd.date_range(start="2024-01-01", periods=5),
+msc_data = pd.DataFramep({
+    "Degree": ["MSc in Bioinformatics"],
+    "Institution": ["Rhodes University"],
+    "Years": ["2018 - 2019"],
+    "Thesis": ["Cyclooxygenase-1 as an anti-stroke target: Potential inhibitor identification and non-synonymous single nucleotide polymorphism analysis"],    
+    "Focus": ["Structural bioinformatics, mutation analysis, computational drug discovery"]
 })
 
-# Simulate MD data
-np.random.seed(42)
-n_frames = 100
-md_data = pd.DataFrame({
-    "Frame": np.arange(1, n_frames + 1),
-    "Time (ns)": np.linspace(0, 100, n_frames),
-    "RMSD (Å)": np.random.normal(2.0, 0.3, n_frames),
-    "Rg (Å)": np.random.normal(20.0, 0.5, n_frames),
-    "Temperature (K)": np.random.normal(300, 1, n_frames)
-})
+bsc_data = pd.DataFramep({
+    "Degree": ["MSc in Biochemistry"],
+    "Institution": ["University of Zimbabwe"],
+    "Years": ["2012 - 2016"],
+    "Thesis": ["dsRNA analysis of sweet potato to index for unknown viruses"],    
+    "Focus": ["Lab techniques, Tissue culture, Molecular biology and Chemistry"]
 
 # weather_data = pd.DataFrame({
 #     "City": ["Cape Town", "London", "New York", "Tokyo", "Sydney"],
@@ -69,6 +69,7 @@ if menu == "Researcher Profile":
 elif menu == "Publications":
     st.title("Publications")
     st.sidebar.header("Upload and Filter")
+    st.write("Skip if no publications yet") 
 
     # Upload publications file
     uploaded_file = st.file_uploader("Upload a CSV of Publications", type="csv")
@@ -162,6 +163,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
