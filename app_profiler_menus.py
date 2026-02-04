@@ -69,7 +69,6 @@ if menu == "Researcher Profile":
 elif menu == "Publications":
     st.title("Publications")
     st.sidebar.header("Upload and Filter")
-    st.write("Skip if no publications yet") 
 
     # Upload publications file
     uploaded_file = st.file_uploader("Upload a CSV of Publications", type="csv")
@@ -141,6 +140,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
