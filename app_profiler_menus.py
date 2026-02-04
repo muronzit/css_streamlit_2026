@@ -152,6 +152,9 @@ elif menu == "Research Interests":
     value=len(research_interests)
     )
 
+    st.title("Research Interests")
+    for interest in research_interests[:num_interests]:
+        st.write(f"- {interest}")
 
 
 elif menu == "Contact":
@@ -160,6 +163,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
