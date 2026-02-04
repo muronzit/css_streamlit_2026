@@ -47,9 +47,13 @@ if menu == "Researcher Profile":
     st.write(f"**Field of Research:** {field}")
     st.write(f"**Institution:** {institution}")
     
+#    st.image(
+#    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+#    caption="Nature (Pixabay)"
     st.image(
-    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    ".pexels-myburgh-4816921.jpg",
     caption="Nature (Pixabay)"
+
 )
 
 elif menu == "Publications":
@@ -131,7 +135,8 @@ elif menu == "STEM Data Explorer":
 elif menu == "Contact":
     # Add a contact section
     st.header("Contact Information")
-    email = "jane.doe@example.com"
+    email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
