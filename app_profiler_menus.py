@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Set page title
-st.set_page_config(page_title="Researcher Profile and STEM Data Explorer", layout="wide")
+st.set_page_config(page_title="Researcher Profile", layout="wide")
 
 # Sidebar Menu
 st.sidebar.title("Navigation")
@@ -40,7 +40,7 @@ if menu == "Researcher Profile":
     # Collect basic information
     name = "Dr. Tendai Muronzi"
     field = "Bioinformatics"
-    institution = "Rhodes University"
+    institution = "Rhodes University, South Africa"
 
     # Display basic profile information
     st.write(f"**Name:** {name}")
@@ -135,6 +135,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
