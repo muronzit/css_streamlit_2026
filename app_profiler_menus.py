@@ -9,7 +9,7 @@ st.set_page_config(page_title="Researcher Profile and STEM data", layout="wide")
 st.sidebar.title("Navigation")
 menu = st.sidebar.radio(
     "Go to:",
-    ["Researcher Profile", "Publications", "STEM Data Explorer", "Contact"],
+    ["Researcher Profile", "Education", "Research Interests", "Publications", "Contact"],
 )
 
 # Dummy STEM data
@@ -95,17 +95,17 @@ elif menu == "Publications":
         else:
             st.write("The CSV does not have a 'Year' column to visualize trends.")
 
-elif menu == "STEM Data Explorer":
-    st.title("STEM Data Explorer")
-    st.sidebar.header("Data Selection")
+elif menu == "Education":
+    st.title("Education")
+    st.sidebar.header("Degree Selection")
     
     # Tabbed view for STEM data
     data_option = st.sidebar.selectbox(
-        "Choose a dataset to explore", 
-        ["Physics Experiments", "Astronomy Observations", "MD Simulations"]
+        "Choose a degree", 
+        ["PhD in Bioinformatics", "MSc in Bioinformatics", "BSc in Biochemistry"]
     )
 
-    if data_option == "Physics Experiments":
+    if data_option == "PhD in Bioinformatics":
         st.write("### Physics Experiment Data")
         st.dataframe(physics_data)
         # Add widget to filter by Energy levels
@@ -116,7 +116,7 @@ elif menu == "STEM Data Explorer":
         st.write(f"Filtered Results for Energy Range {energy_filter}:")
         st.dataframe(filtered_physics)
 
-    elif data_option == "Astronomy Observations":
+    elif data_option == "MSc in Bioinformatics":
         st.write("### Astronomy Observation Data")
         st.dataframe(astronomy_data)
         # Add widget to filter by Brightness
@@ -127,7 +127,7 @@ elif menu == "STEM Data Explorer":
         st.write(f"Filtered Results for Brightness Range {brightness_filter}:")
         st.dataframe(filtered_astronomy)
 
-    elif data_option == "MD Simulations":
+    elif data_option == "BSc in Biochemistry":
         st.write("### Molecular Dynamics Simulation Data")
         rmsd_range = st.slider(
         "Filter by RMSD (Å)",
@@ -162,6 +162,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
