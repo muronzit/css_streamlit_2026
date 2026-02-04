@@ -48,7 +48,9 @@ if menu == "Researcher Profile":
     st.write(f"**Institution:** {institution}")
     
     st.image(
-    "https://github.com/muronzit/css_streamlit_2026/blob/main/pexels-myburgh-4816921.jpg"
+    "https://raw.githubusercontent.com/muronzit/css_streamlit_2026/main/pexels-myburgh-4816921.jpg",
+    caption="Photo by Myburgh (Pexels)",
+    use_column_width=True
 )
 
 elif menu == "Publications":
@@ -133,6 +135,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
