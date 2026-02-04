@@ -5,6 +5,11 @@ import numpy as np
 # Set page title
 st.set_page_config(page_title="Researcher Profile", layout="wide")
 
+st.markdown(
+    "<h2 style='text-align: center;'>Researcher Profile</h2>",
+    unsafe_allow_html=True
+)
+
 # Sidebar Menu
 st.sidebar.title("Navigation")
 menu = st.sidebar.radio(
@@ -137,6 +142,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
