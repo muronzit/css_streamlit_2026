@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Set page title
-st.set_page_config(page_title="Researcher Profile and STEM data", layout="wide")
+st.set_page_config(page_title="Researcher Profile", layout="wide")
 
 # Sidebar Menu
 st.sidebar.title("Navigation")
@@ -12,7 +12,21 @@ menu = st.sidebar.radio(
     ["Researcher Profile", "Education", "Research Interests", "Publications", "Contact"],
 )
 
-# Dummy STEM data
+#Reserch Interests
+research_interests = [
+    "Structural Bioinformatics",
+    "Protein–Protein Interactions",
+    "Drug Discovery",
+    "Molecular Dynamics Simulations",
+    "Sequence and Variant Analysis",
+    "Protein Extraction and purification",
+    "Nucleic Acid Extraction and Purification",
+    "Python",
+    "R",
+    "ML and AI"
+]
+
+# Education 
 phd_data = pd.DataFrame({
     "Degree": ["PhD in Bioinformatics"],
     "Institution": ["Rhodes University"],
@@ -36,12 +50,7 @@ bsc_data = pd.DataFrame({
     "Thesis": ["dsRNA analysis of sweet potato to index for unknown viruses"],    
     "Focus": ["Lab techniques, Tissue culture, Molecular biology and Chemistry"]
 })
-# weather_data = pd.DataFrame({
-#     "City": ["Cape Town", "London", "New York", "Tokyo", "Sydney"],
-#     "Temperature (°C)": [25, 10, -3, 15, 30],
-#     "Humidity (%)": [65, 70, 55, 80, 50],
-#     "Recorded Date": pd.date_range(start="2024-01-01", periods=5),
-# })
+
 
 # Sections based on menu selection
 if menu == "Researcher Profile":
@@ -99,7 +108,7 @@ elif menu == "Education":
     st.title("Education")
     st.sidebar.header("Degree Selection")
     
-    # Tabbed view for STEM data
+    # Tabbed view for education
     data_option = st.sidebar.selectbox(
         "Choose a degree", 
         ["PhD in Bioinformatics", "MSc in Bioinformatics", "BSc in Biochemistry"]
@@ -108,7 +117,7 @@ elif menu == "Education":
     if data_option == "PhD in Bioinformatics":
         st.write("### Physics Experiment Data")
         st.dataframe(phd_data)
-        # Add widget to filter by Energy levels
+   
  
     elif data_option == "MSc in Bioinformatics":
         st.write("### Astronomy Observation Data")
@@ -132,7 +141,18 @@ elif menu == "Education":
     #     st.write(f"Filtered Results for Temperature {temp_filter} and Humidity {humidity_filter}:")
     #     st.dataframe(filtered_weather)
         
-        
+elif menu == "Research Interests":
+    st.title("Research Interests")    
+    st.sidebar.title("Research Interests")
+    # Slider to select how many interests to show
+    num_interests = st.sidebar.slider(
+    "Show top N research interests:",
+    min_value=1,
+    max_value=len(research_interests),
+    value=len(research_interests)
+    )
+
+
 
 elif menu == "Contact":
     # Add a contact section
@@ -140,6 +160,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
