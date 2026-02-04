@@ -25,6 +25,17 @@ astronomy_data = pd.DataFrame({
     "Observation Date": pd.date_range(start="2024-01-01", periods=5),
 })
 
+# Simulate MD data
+np.random.seed(42)
+n_frames = 100
+md_data = pd.DataFrame({
+    "Frame": np.arange(1, n_frames + 1),
+    "Time (ns)": np.linspace(0, 100, n_frames),
+    "RMSD (Å)": np.random.normal(2.0, 0.3, n_frames),
+    "Rg (Å)": np.random.normal(20.0, 0.5, n_frames),
+    "Temperature (K)": np.random.normal(300, 1, n_frames)
+})
+
 # weather_data = pd.DataFrame({
 #     "City": ["Cape Town", "London", "New York", "Tokyo", "Sydney"],
 #     "Temperature (°C)": [25, 10, -3, 15, 30],
@@ -91,7 +102,7 @@ elif menu == "STEM Data Explorer":
     # Tabbed view for STEM data
     data_option = st.sidebar.selectbox(
         "Choose a dataset to explore", 
-        ["Physics Experiments", "Astronomy Observations"]
+        ["Physics Experiments", "Astronomy Observations", "MD Simulations"]
     )
 
     if data_option == "Physics Experiments":
@@ -116,6 +127,20 @@ elif menu == "STEM Data Explorer":
         st.write(f"Filtered Results for Brightness Range {brightness_filter}:")
         st.dataframe(filtered_astronomy)
 
+    elif data_option == "MD Simulations":
+        st.write("### Molecular Dynamics Simulation Data")
+        rmsd_range = st.slider(
+        "Filter by RMSD (Å)",
+        float(md_data["RMSD (Å)"].min()),
+        float(md_data["RMSD (Å)"].max()),
+        (float(md_data["RMSD (Å)"].min()), float(md_data["RMSD (Å)"].max()))
+        )
+        filtered_md = md_data[
+        md_data["RMSD (Å)"].between(rmsd_range[0], rmsd_range[1])
+        ]
+        st.write(f"Frames with RMSD in range {rmsd_range}:")
+        st.dataframe(filtered_md)
+
     # elif data_option == "Weather Data":
     #     st.write("### Weather Data")
     #     st.dataframe(weather_data)
@@ -137,6 +162,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
