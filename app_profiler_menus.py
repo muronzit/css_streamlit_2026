@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Set page title
-st.set_page_config(page_title="Researcher Profile", layout="wide")
+st.set_page_config(page_title="Researcher Profile and STEM data", layout="wide")
 
 st.markdown(
     "<h2 style='text-align: center;'>Researcher Profile</h2>",
@@ -142,6 +142,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
