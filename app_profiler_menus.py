@@ -21,7 +21,7 @@ phd_data = pd.DataFrame({
     "Focus": ["Structural bioinformatics, protein-protein interactions, computational drug discovery"]   
 })
 
-msc_data = pd.DataFramep({
+msc_data = pd.DataFrame({
     "Degree": ["MSc in Bioinformatics"],
     "Institution": ["Rhodes University"],
     "Years": ["2018 - 2019"],
@@ -140,6 +140,7 @@ elif menu == "Contact":
     email = "tendai.muronzi@ru.ac.za"
 
     st.write(f"You can reach me at {email}.")
+
 
 
 
